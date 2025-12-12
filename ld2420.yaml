@@ -27,7 +27,7 @@ binary_sensor:
         then:
           - light.turn_off:
               id: onboard_led
-
+sensor:
   ############################################################################
   - platform: ld2420
     moving_distance:
