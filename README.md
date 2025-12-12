@@ -18,13 +18,30 @@ Add the following to your ESPHome config
 
 ```
 packages:
-  #Onboard LED, switch to turn off indications
-  UnitBase: github://paul-east-23/Presence-Detector-Unit/unitbase.yaml
-
-  #AHT20 and BH1750 sensors
-  Sensors: github://paul-east-23/Presence-Detector-Unit/sensors.yaml
-
-  #Select one depending on the module installed
-  LD1020: github://paul-east-23/Presence-Detector-Unit/ld1020.yaml
-  #LD2420: github://paul-east-23/Presence-Detector-Unit/ld2420.yaml
+  # Onboard LED, switch to turn off indications
+  base: 
+    url: https://github.com/paul-east-23/Presence-Detector-Unit
+    ref: main
+    refresh: 0d
+    file: unitbase.yaml
+  
+  # AHT20 and BH1750 sensors
+  sensors: 
+    url: https://github.com/paul-east-23/Presence-Detector-Unit
+    ref: main
+    refresh: 0d
+    file: sensors.yaml
+  
+  # Select one depending on the module installed
+  ld1020: 
+    url: https://github.com/paul-east-23/Presence-Detector-Unit
+    ref: main
+    refresh: 0d
+    file: ld1020.yaml
+  
+  #ld2420: 
+  #  url: https://github.com/paul-east-23/Presence-Detector-Unit
+  #  ref: main
+  #  refresh: 0d
+  #  file: ld2420.yaml
 ```
