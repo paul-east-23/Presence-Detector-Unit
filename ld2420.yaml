@@ -1,3 +1,10 @@
+ld2420:
+
+text_sensor:
+  - platform: ld2420
+    fw_version:
+      name: LD2420 Firmware
+      
 ############################################################################
 uart:
   id: ld2420_uart
@@ -48,13 +55,6 @@ button:
       name: Restart Module
     revert_config:
       name: Undo Edits
-
-ld2420:
-
-text_sensor:
-  - platform: ld2420
-    fw_version:
-      name: LD2420 Firmware
 
 select:
   - platform: ld2420
