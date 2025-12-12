@@ -1,0 +1,31 @@
+
+sensor:
+  ############################################################################
+  # Temperature and humidity
+  - platform: aht10
+    variant: AHT20
+    temperature:
+      name: "Temperature"
+      id: temperature_AHT20
+    humidity:
+      name: "Humidity"
+    update_interval: 60s
+
+  ############################################################################
+  #i2c for BH1750
+  - platform: bh1750
+    name: Illuminance
+    address: 0x23
+    update_interval: 15s
+    filters:
+      - sliding_window_moving_average:
+          window_size: 20
+          send_every: 20
+
+############################################################################
+#i2c for AHT20 and BH1750 
+i2c:
+  sda: GPIO0
+  scl: GPIO1
+  scan: true
+  id: bus_a
