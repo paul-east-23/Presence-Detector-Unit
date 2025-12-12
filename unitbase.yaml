@@ -1,1 +1,32 @@
+############################################################################
 
+#         5V    [USB]    21  
+#         GND            20  
+#         3V3            19  
+# SDA     0              18  
+# SCL     1              10  
+# Rx/1020 2               9  
+# TX      3               8  
+# JST-Y   4               7  Jumper to LED
+# JST-W   5               6  Jumper to LED
+
+############################################################################
+light:
+  - platform: esp32_rmt_led_strip
+    id: onboard_led
+    rgb_order: GRB
+    pin: GPIO10
+    num_leds: 1
+    chipset: ws2812
+    name: "RGB"
+
+############################################################################
+switch:
+  - platform: template
+    name: "Indicator lights"
+    icon: "mdi:led-on"
+    optimistic: true
+    id: use_lights
+    restore_mode: RESTORE_DEFAULT_ON
+    on_turn_off:
+      - light.turn_off: onboard_led
