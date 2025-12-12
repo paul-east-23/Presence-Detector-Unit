@@ -14,8 +14,18 @@ uart:
   parity: NONE
   stop_bits: 1
 
-binary_sensor:
 ############################################################################
+sensor:
+  - platform: ld2420
+    moving_distance:
+      name : Moving Distance
+      filters:
+        - clamp:
+            max_value: 800
+            ignore_out_of_range: true
+
+############################################################################
+binary_sensor:
   - platform: ld2420
     has_target:
       name: Presence
@@ -34,18 +44,9 @@ binary_sensor:
         then:
           - light.turn_off:
               id: onboard_led
-sensor:
+
 ############################################################################
-  - platform: ld2420
-    moving_distance:
-      name : Moving Distance
-      filters:
-        - clamp:
-            max_value: 800
-            ignore_out_of_range: true
-            
 button:
-############################################################################
   - platform: ld2420
     apply_config:
       name: Apply Config
