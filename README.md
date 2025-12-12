@@ -13,3 +13,18 @@ There is also going to be a JST connector to allow 2 additional inputs/outputs a
          TX      3               8  
          JST-Y   4               7  Jumper to LED
          JST-W   5               6  Jumper to LED
+
+Add the following to your ESPHome config
+
+```
+packages:
+  #Onboard LED, switch to turn off indications
+  UnitBase: github://paul-east-23/Presence-Detector-Unit/unitbase.yaml
+
+  #AHT20 and BH1750 sensors
+  Sensors: github://paul-east-23/Presence-Detector-Unit/sensors.yaml
+
+  #Select one depending on the module installed
+  LD1020: github://paul-east-23/Presence-Detector-Unit/ld1020.yaml
+  #LD2420: github://paul-east-23/Presence-Detector-Unit/ld2420.yaml
+```
