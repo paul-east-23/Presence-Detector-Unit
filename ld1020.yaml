@@ -6,8 +6,8 @@ binary_sensor:
     pin: GPIO2
     name: "Movement"
     device_class: motion
-    #filters:
-    #  - delayed_off: 5s
+    filters:
+      - delayed_off: {delay}s
     on_press:
       if:
         condition:
