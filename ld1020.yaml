@@ -7,7 +7,8 @@ binary_sensor:
     name: "Movement"
     device_class: motion
     filters:
-      - delayed_off: ${delay}
+      #- delayed_off: ${delay}
+      - delayed_off: 2s
     on_press:
       if:
         condition:
