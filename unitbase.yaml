@@ -19,24 +19,14 @@ light:
     num_leds: 1
     chipset: ws2812
     name: "RGB"
-  - platform: monochromatic
-    name: "LED1"
-    id: led1
-    output: output5
-    internal: true
-  - platform: monochromatic
-    name: "LED2"
-    id: led2
-    output: output4
-    internal: true
 
 ############################################################################
 output:
   - platform: gpio
-    id: output5
+    id: LED1
     pin: GPIO5
   - platform: gpio
-    id: output4
+    id: LED2
     pin: GPIO4
     
 ############################################################################
@@ -49,5 +39,5 @@ switch:
     restore_mode: RESTORE_DEFAULT_ON
     on_turn_off:
       - light.turn_off: onboard_led
-      - light.turn_off: led1
-      - light.turn_off: led2
+      - output.turn_off: LED1
+      - output.turn_off: LED2
