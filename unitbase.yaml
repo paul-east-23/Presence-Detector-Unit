@@ -21,15 +21,24 @@ light:
     name: "RGB"
   - platform: monochromatic
     name: "LED1"
-    output: LED1
-    pin: GPIO5
+    output: output5
     internal: true
   - platform: monochromatic
     name: "LED2"
-    output: LED2
-    pin: GPIO4
+    output: output4
     internal: true
 
+############################################################################
+output:
+  - platform: gpio
+    output: output5
+    pin: GPIO5
+    internal: true
+  - platform: gpio
+    output: output4
+    pin: GPIO4
+    internal: true
+    
 ############################################################################
 switch:
   - platform: template
