@@ -33,11 +33,9 @@ output:
   - platform: gpio
     id: output5
     pin: GPIO5
-    internal: true
   - platform: gpio
     id: output4
     pin: GPIO4
-    internal: true
     
 ############################################################################
 switch:
