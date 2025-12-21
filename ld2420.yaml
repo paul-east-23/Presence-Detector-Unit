@@ -35,8 +35,8 @@ binary_sensor:
             condition:
               switch.is_on: use_lights
             then:
-            - light.turn_on: led1
-            - light.turn_off: led2
+              - output.turn_on: LED1
+              - output.turn_off: LED2
 #            - light.turn_on:
 #                id: onboard_led
 #                red: 0%
@@ -44,8 +44,8 @@ binary_sensor:
 #                blue: 0%
       on_release:
         then:
-          - light.turn_on: led2
-          - light.turn_off: led1
+          - output.turn_on: LED2
+          - output.turn_off: LED1
 #          - light.turn_off:
 #              id: onboard_led
 
