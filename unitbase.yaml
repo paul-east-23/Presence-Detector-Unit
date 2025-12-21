@@ -40,3 +40,5 @@ switch:
     restore_mode: RESTORE_DEFAULT_ON
     on_turn_off:
       - light.turn_off: onboard_led
+      - light.turn_off: led1
+      - light.turn_off: led2
