@@ -31,11 +31,11 @@ light:
 ############################################################################
 output:
   - platform: gpio
-    output: output5
+    id: output5
     pin: GPIO5
     internal: true
   - platform: gpio
-    output: output4
+    id: output4
     pin: GPIO4
     internal: true
     
