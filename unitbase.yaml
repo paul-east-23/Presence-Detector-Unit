@@ -21,10 +21,12 @@ light:
     name: "RGB"
   - platform: monochromatic
     name: "LED1"
+    id: led1
     output: output5
     internal: true
   - platform: monochromatic
     name: "LED2"
+    id: led2
     output: output4
     internal: true
 
